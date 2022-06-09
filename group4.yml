@@ -1,0 +1,14 @@
+---
+- hosts: 172.31.9.47
+  gather_facts: false
+
+  tasks:
+      - name: Install apache in ubuntu
+        apt:
+          name: apache2
+          state: latest
+      - name: Apache is running
+        service:
+          name: apache2
+          state: started
+
